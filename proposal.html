@@ -1,0 +1,147 @@
+# NEW
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Proposal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 600px;
+            animation: slideIn 0.8s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .heart {
+            font-size: 60px;
+            margin-bottom: 20px;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        h1 {
+            color: #764ba2;
+            font-size: 36px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        p {
+            color: #555;
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        button {
+            padding: 14px 40px;
+            font-size: 16px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .yes-btn {
+            background: #667eea;
+            color: white;
+        }
+
+        .yes-btn:hover {
+            background: #764ba2;
+            transform: scale(1.05);
+        }
+
+        .no-btn {
+            background: #e0e0e0;
+            color: #333;
+        }
+
+        .no-btn:hover {
+            background: #ccc;
+            transform: scale(0.95);
+        }
+
+        .success {
+            display: none;
+            color: #667eea;
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="heart">💜</div>
+        <h1>Will You Be Mine?</h1>
+        <p>
+            I've admired you from afar, and every moment with you makes my heart smile. 
+            You bring joy, laughter, and warmth into my life. I would be the happiest person 
+            if you would be my special someone.
+        </p>
+        <div class="buttons">
+            <button class="yes-btn" onclick="sayYes()">Yes! 🎉</button>
+            <button class="no-btn" onclick="sayNo()">No</button>
+        </div>
+        <div class="success" id="successMsg">❤️ You made me the happiest! ❤️</div>
+    </div>
+
+    <script>
+        function sayYes() {
+            document.querySelector('.buttons').style.display = 'none';
+            document.getElementById('successMsg').style.display = 'block';
+        }
+
+        function sayNo() {
+            alert('Take your time thinking about it! 😊');
+        }
+    </script>
+</body>
+</html>
